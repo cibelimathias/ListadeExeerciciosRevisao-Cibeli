@@ -1,0 +1,29 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="reservation-form">
+        <h2>Faça sua reserva</h2>
+        <label for="date">Data:</label>
+        <input type="date" id="date">
+        <label for="time">Hora:</label>
+        <input type="time" id="time">
+        <button onclick="makeReservation()">Reservar</button>
+    </div>
+    <script>
+        function makeReservation() {
+            var date = document.getElementById('date').value;
+            var time = document.getElementById('time').value;
+        
+        
+            alert("Reserva feita para " + date + " às " + time);
+        }
+    </script>
+</body>
+</html>

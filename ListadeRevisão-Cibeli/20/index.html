@@ -1,0 +1,55 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Upload de Arquivos</h2>
+        <form id="formUpload" enctype="multipart/form-data">
+            <input type="file" id="fileInput" name="arquivo" multiple>
+            <button type="submit">Enviar Arquivos</button>
+        </form>
+        <div id="preview"></div>
+    </div>
+
+    <script>
+        document.getElementById('fileInput').addEventListener('change', function() {
+            var preview = document.getElementById('preview');
+            preview.innerHTML = '';
+        
+            var files = this.files;
+        
+            for (var i = 0; i < files.length; i++) {
+                var file = files[i];
+        
+                if (file.type.match('image.*')) {
+                    var reader = new FileReader();
+        
+                    reader.onload = function(event) {
+                        var img = document.createElement('img');
+                        img.src = event.target.result;
+                        img.style.width = '200px';
+                        img.style.marginRight = '10px';
+                        img.style.marginBottom = '10px';
+                        preview.appendChild(img);
+                    };
+        
+                    reader.readAsDataURL(file);
+                } else {
+                    var fileDetails = document.createElement('p');
+                    fileDetails.textContent = file.name + ' - ' + file.type;
+                    preview.appendChild(fileDetails);
+                }
+            }
+        });
+        
+        
+        
+    </script>
+</body>
+</html>

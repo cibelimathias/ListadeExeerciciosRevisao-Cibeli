@@ -1,0 +1,47 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="audio-player">
+        <audio id="audioPlayer" src="song.mp3"></audio>
+        <div class="audio-player">
+            <img src="Espresso.png" alt="Capa do Álbum" class="album-cover">
+            <audio id="audioPlayer" src="sample-audio.mp3"></audio>
+            <div class="controls">
+                <button id="playBtn"><i class="fas fa-play"></i></button>
+                <button id="pauseBtn"><i class="fas fa-pause"></i></button>
+                <button id="stopBtn"><i class="fas fa-stop"></i></button>
+            </div>
+        </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const audioPlayer = document.getElementById('audioPlayer');
+            const playBtn = document.getElementById('playBtn');
+            const pauseBtn = document.getElementById('pauseBtn');
+            const stopBtn = document.getElementById('stopBtn');
+        
+            playBtn.addEventListener('click', function() {
+                audioPlayer.play();
+            });
+        
+            pauseBtn.addEventListener('click', function() {
+                audioPlayer.pause();
+            });
+        
+            stopBtn.addEventListener('click', function() {
+                audioPlayer.pause();
+                audioPlayer.currentTime = 0;
+            });
+        });
+        
+    </script>
+</body>
+</html>

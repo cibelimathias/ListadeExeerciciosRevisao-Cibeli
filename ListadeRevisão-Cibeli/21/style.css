@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffc1d5;
+}
+
+
+.reservation-form {
+    text-align: center;
+}
+
+.reservation-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.reservation-form input {
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+.reservation-form button {
+    padding: 10px 20px;
+    background-color: #f74780;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Estilos adicionais para tornar o formulário de reserva mais bonito */
+
+.reservation-form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-form label {
+    font-size: 18px;
+    color: #333;
+}
+
+.reservation-form input {
+    width: calc(100% - 16px); /* Ajuste para compensar o padding */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.reservation-form input:focus {
+    outline: none;
+    border-color: #f74780; /* Cor quando o campo está em foco */
+}
+
+.reservation-form button {
+    color: white;
+    background-color: #f74780;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s; /* Efeito de transição ao passar o mouse */
+}
+
+.reservation-form button:hover {
+    background-color: #f5396b; /* Cor do botão ao passar o mouse */
+}

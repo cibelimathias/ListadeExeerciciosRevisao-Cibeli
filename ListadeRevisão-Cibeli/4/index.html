@@ -1,0 +1,51 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <h1>Tabela de Cachorros</h1>
+    <table id="minhaTabela">
+        <thead>
+            <tr>
+                <th>Poodle</th>
+                <th>Pug</th>
+                <th>Pit Bull</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Vira Lata</td>
+                <td>Rotwailler</td>
+                <td>Persa</td>
+            </tr>
+            <tr>
+                <td>Doberman</td>
+                <td>Salsicha</td>
+                <td>Bace</td>
+            </tr>
+        </tbody>
+    </table>
+    <button id="botao" onclick="adicionar()">Adicionar raça</button>
+<script>
+    function adicionar() {
+        const tabela = document.getElementById('minhaTabela').getElementsByTagName('tbody')[0];
+        const racas = [
+            ["Bulldog", "Beagle", "Pastor Alemão"],
+        ];
+
+        racas.forEach(raca => {
+            const novaLinha = tabela.insertRow();
+            raca.forEach(celulaTexto => {
+                const novaCelula = novaLinha.insertCell();
+                novaCelula.textContent = celulaTexto;
+            });
+        });
+    }
+            </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="container">
+        <form id="commentForm">
+            <h2>Deixe um Comentário</h2>
+            <div class="form-group">
+                <label for="comment">Comentário:</label>
+                <textarea id="comment" name="comment" required></textarea>
+            </div>
+            <button type="button" id="submitComment">Adicionar Comentário</button>
+        </form>
+        <h3>Comentários</h3>
+        <ul id="commentList"></ul>
+    </div>
+    <script>
+        document.getElementById('submitComment').addEventListener('click', function() {
+            var commentText = document.getElementById('comment').value;
+            
+            if (commentText === '') {
+                alert('Por favor, insira um comentário.');
+            } else {
+                var commentList = document.getElementById('commentList');
+                var newComment = document.createElement('li');
+                newComment.textContent = commentText;
+                commentList.appendChild(newComment);
+                document.getElementById('comment').value = '';
+            }
+        });
+    </script>
+</body>
+</html>

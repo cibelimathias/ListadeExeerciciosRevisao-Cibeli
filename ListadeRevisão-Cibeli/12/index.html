@@ -1,0 +1,61 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <form id="contactForm" class="contact-form">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        
+        <button type="submit" class="submit-btn">Enviar</button>
+    </form>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const contactForm = document.getElementById('contactForm');
+        
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+        
+               
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+        
+                if (name && email && message) {
+        
+                    Swal.fire({
+                        title: 'Sucesso!',
+                        text: 'Envio com sucesso',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    });
+        
+                    
+                    contactForm.reset();
+                } else {
+                    
+                    Swal.fire({
+                        title: 'Erro!',
+                        text: 'Por favor, preencha todos os campos.',
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            });
+        });
+        
+    </script>
+</body>
+</html>

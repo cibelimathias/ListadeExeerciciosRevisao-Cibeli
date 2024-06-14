@@ -1,0 +1,40 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffc1d5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.animate-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    background-color: #fa8fb1; /* Azul */
+    color: white;
+    border-radius: 5px;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.animate-btn:hover {
+    background-color: #f74780;
+}
+
+.animate-btn.grow {
+    animation: growAnimation 0.5s forwards;
+}
+
+@keyframes growAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

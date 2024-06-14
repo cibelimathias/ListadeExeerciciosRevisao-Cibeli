@@ -1,0 +1,49 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Galeria de Imagens</h2>
+        <div id="botoesFiltro">
+            <button class="filtro" data-categoria="all">Todas</button>
+            <button class="filtro" data-categoria="natureza">Natureza</button>
+            <button class="filtro" data-categoria="cidade">Cidade</button>
+            <button class="filtro" data-categoria="animais">Animais</button>
+        </div>
+        <div id="galeria">
+            <div class="imagem" data-categoria="natureza"><img src="natureza1.jpg" alt="Natureza 1"></div>
+            <div class="imagem" data-categoria="natureza"><img src="natureza2.jpg" alt="Natureza 2"></div>
+            <div class="imagem" data-categoria="cidade"><img src="cidade1.jpg" alt="Cidade 1"></div>
+            <div class="imagem" data-categoria="cidade"><img src="cidade2.jpg" alt="Cidade 2"></div>
+            <div class="imagem" data-categoria="animais"><img src="animais1.jpg" alt="Animais 1"></div>
+            <div class="imagem" data-categoria="animais"><img src="animais2.jpg" alt="Animais 2"></div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var botoesFiltro = document.querySelectorAll('.filtro');
+            var imagens = document.querySelectorAll('.imagem');
+        
+            botoesFiltro.forEach(function(botao) {
+                botao.addEventListener('click', function() {
+                    var categoria = botao.dataset.categoria;
+        
+                    imagens.forEach(function(imagem) {
+                        if (categoria === 'all' || imagem.dataset.categoria === categoria) {
+                            imagem.style.display = 'block';
+                        } else {
+                            imagem.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+/*Cibeli Aparecida Mathias Garcia*/
+*{
+    background-color: #ffc1d5;
+    color: #fa8fb1;
+    text-align: center;
+}
+#botao{
+    background-color: #f74780;
+    border-radius: 25px;
+    border: none;
+    padding: 15px;
+}

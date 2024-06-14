@@ -1,0 +1,41 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="menu-dropdown">
+        <button class="botao-dropdown" id="botaoDropdown">Opções</button>
+        <div class="menu-itens" id="menuItens">
+            <a href="#">Lanches</a>
+            <a href="#">Porções</a>
+            <a href="#">Bebidas</a>
+        </div>
+    </div>
+    <script>
+        document.getElementById('botaoDropdown').addEventListener('click', function() {
+            var menuItens = document.getElementById('menuItens');
+            if (menuItens.style.display === 'block') {
+                menuItens.style.display = 'none';
+            } else {
+                menuItens.style.display = 'block';
+            }
+        });
+        window.onclick = function(event) {
+            if (!event.target.matches('.botao-dropdown')) {
+                var dropdowns = document.getElementsByClassName('menu-itens');
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        };
+    </script>
+</body>
+</html>

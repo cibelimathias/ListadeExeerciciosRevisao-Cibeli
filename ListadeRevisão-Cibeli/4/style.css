@@ -1,0 +1,29 @@
+*{
+    background-color: #ffc1d5;
+    color: #fa8fb1;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #fa8fb1;;
+    padding: 10px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+#botao{
+    background-color: #f74780;
+    border-radius: 25px;
+    border: none;
+    padding: 15px;
+    margin-top: 20px;
+}

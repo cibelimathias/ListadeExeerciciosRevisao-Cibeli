@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <h1>Tarefas</h1>
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Adicionar nova tarefa">
+        <button type="submit">Adicionar</button>
+    </form>
+    <ul id="taskList"></ul>
+    <button id="clearBtn">Limpar Tudo</button>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskForm = document.getElementById('taskForm');
+            const taskInput = document.getElementById('taskInput');
+            const taskList = document.getElementById('taskList');
+            const clearBtn = document.getElementById('clearBtn');
+        
+            // Load tasks from localStorage
+            let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        
+            function renderTasks() {
+                taskList.innerHTML = '';
+                tasks.forEach((task, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <input type="checkbox" id="task${index}" ${task.completed ? 'checked' : ''}>
+                        <label for="task${index}" class="${task.completed ? 'completed' : ''}">${task.text}</label>
+                        <button class="deleteBtn" data-index="${index}"><i class="fas fa-trash-alt"></i></button>
+                    `;
+                    taskList.appendChild(li);
+                });
+            }
+        
+            renderTasks();
+        
+            taskForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const text = taskInput.value.trim();
+                if (text !== '') {
+                    tasks.push({ text: text, completed: false });
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    renderTasks();
+                    taskInput.value = '';
+                }
+            });
+        
+            taskList.addEventListener('change', function(event) {
+                if (event.target.type === 'checkbox') {
+                    const index = event.target.id.replace('task', '');
+                    tasks[index].completed = event.target.checked;
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    renderTasks();
+                }
+            });
+        
+            taskList.addEventListener('click', function(event) {
+                if (event.target.classList.contains('deleteBtn')) {
+                    const index = event.target.dataset.index;
+                    tasks.splice(index, 1);
+                    localStorage.setItem('tasks', JSON.stringify(tasks));
+                    renderTasks();
+                }
+            });
+        
+            clearBtn.addEventListener('click', function() {
+                tasks = [];
+                localStorage.removeItem('tasks');
+                renderTasks();
+            });
+        });
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <h1>Meus Cachorros</h1>
+    <ul id="lista">
+        <li>PIPI ZU</li>
+        <li>STINFER DU INFERN</li>
+        <li>GOGO NONINHA</li>
+        <li>COCÒ</li>
+        <li>SEXTA FEIRA</li>
+    </ul>
+    
+    <script>
+        document.querySelectorAll("#lista li").forEach(item => {
+            item.addEventListener("click", function() {
+                this.classList.toggle("destacado");
+            });
+        });
+    </script>
+</body>
+</html>

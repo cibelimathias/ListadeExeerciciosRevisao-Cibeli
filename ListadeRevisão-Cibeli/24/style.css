@@ -1,0 +1,40 @@
+body {
+    background-color: #ffc1d5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.audio-player {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.album-cover {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px 20px;
+    margin: 0 10px;
+    background-color: #f74780;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button i {
+    font-size: 24px;
+}

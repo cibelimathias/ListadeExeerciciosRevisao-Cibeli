@@ -1,0 +1,56 @@
+<!--Cibeli Aparecida Mathias Garcia-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cibeli Mathias</title>
+</head>
+<body>
+    <div class="carrossel">
+        <div class="slides">
+            <div class="slide"><img src="dog1.jpg" alt="Imagem 1"></div>
+            <div class="slide"><img src="dog2.jpg" alt="Imagem 2"></div>
+            <div class="slide"><img src="dog3.jpg" alt="Imagem 3"></div>
+        </div>
+        <button class="anterior" id="anterior">&#10094;</button>
+        <button class="proximo" id="proximo">&#10095;</button>
+    </div>
+    <script>
+        let indiceAtual = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+document.getElementById('proximo').addEventListener('click', function() {
+    moverParaProximoSlide();
+});
+
+document.getElementById('anterior').addEventListener('click', function() {
+    moverParaSlideAnterior();
+});
+
+function mostrarSlide(indice) {
+    if (indice >= totalSlides) {
+        indiceAtual = 0;
+    } else if (indice < 0) {
+        indiceAtual = totalSlides - 1;
+    } else {
+        indiceAtual = indice;
+    }
+    document.querySelector('.slides').style.transform = 'translateX(' + (-indiceAtual * 100) + '%)';
+}
+
+function moverParaProximoSlide() {
+    mostrarSlide(indiceAtual + 1);
+}
+
+function moverParaSlideAnterior() {
+    mostrarSlide(indiceAtual - 1);
+}
+
+setInterval(moverParaProximoSlide, 3000);
+        
+    </script>
+</body>
+</html>
